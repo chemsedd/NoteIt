@@ -1,0 +1,18 @@
+.btn {
+    -fx-background-radius: 4px;
+}
+
+.success {
+    -fx-background-color: #7cb342;
+    -fx-text-fill: #fafafa;
+}
+
+.primary {
+    -fx-background-color: #0277bd;
+    -fx-text-fill: #fafafa;
+}
+
+.danger {
+    -fx-background-color: #bf360c;
+    -fx-text-fill: #fafafa;
+}

@@ -1,4 +1,44 @@
 package controller;
 
-public class Controller {
+import com.jfoenix.controls.JFXTextArea;
+import com.jfoenix.controls.JFXTextField;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class Controller implements Initializable {
+
+    @FXML JFXTextField title;
+    @FXML  JFXTextArea content;
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+    }
+
+    @FXML
+    void saveNote() {
+        System.out.println("Title:" + title.getText());
+        System.out.println("Content:" + content.getText());
+    }
+
+
+    /**
+     * Clears Title and Content fields.
+     */
+    @FXML
+    void clearNote() {
+        title.clear();
+        content.clear();
+    }
+
+    /**
+     * Exit app.
+     */
+    @FXML
+    void closeNote() {
+        System.exit(0);
+    }
 }
