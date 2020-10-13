@@ -1,4 +1,4 @@
-package controller;
+package main;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -15,8 +15,8 @@ public class Main extends Application {
         root.getStylesheets().add(getClass().getResource("../resources/style.css").toExternalForm());
         primaryStage.setTitle("NoteIt");
         primaryStage.initStyle(StageStyle.DECORATED);
-        Scene mainScene = new Scene(root);
-        primaryStage.setScene(mainScene);
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
         primaryStage.show();
     }
 
