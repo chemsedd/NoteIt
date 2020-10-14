@@ -17,6 +17,7 @@ public class Main extends Application {
         primaryStage.setTitle("NoteIt");
         primaryStage.initStyle(StageStyle.DECORATED);
         primaryStage.setResizable(false);
+        primaryStage.setAlwaysOnTop(true);
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.show();
