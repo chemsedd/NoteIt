@@ -1,5 +1,6 @@
 package main;
 
+import com.sun.glass.ui.Window;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -15,6 +16,7 @@ public class Main extends Application {
         root.getStylesheets().add(getClass().getResource("../resources/style.css").toExternalForm());
         primaryStage.setTitle("NoteIt");
         primaryStage.initStyle(StageStyle.DECORATED);
+        primaryStage.setResizable(false);
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.show();

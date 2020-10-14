@@ -6,74 +6,109 @@
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="280.0" prefWidth="240.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+<AnchorPane maxHeight="400.0" maxWidth="350.0" prefHeight="342.0" prefWidth="258.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
    <children>
-      <VBox prefHeight="280.0" prefWidth="240.0" spacing="5.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox prefHeight="280.0" prefWidth="240.0" spacing="20.0" styleClass="darker-gb" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <HBox prefHeight="0.0" prefWidth="220.0" spacing="5.0">
+            <JFXButton buttonType="RAISED" onAction="#newNote" prefHeight="37.0" prefWidth="289.0" ripplerFill="#0080ff" text="New note +" textFill="WHITE">
+               <font>
+                  <Font name="Open Sans Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="orange-gradient" />
+               </styleClass>
+            </JFXButton>
+            <JFXTextField fx:id="title" focusColor="#e30d00" prefHeight="37.0" prefWidth="220.0" promptText="Title..." styleClass="dark-gb" unFocusColor="#ffffff00">
+               <font>
+                  <Font name="Open Sans ExtraBold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </JFXTextField>
+            <JFXTextArea fx:id="content" focusColor="#e30d00" prefHeight="166.0" prefWidth="238.0" promptText="Content here..." styleClass="dark-gb" unFocusColor="#4d4d4d00" wrapText="true">
+               <font>
+                  <Font name="Open Sans SemiBold" size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </JFXTextArea>
+            <HBox prefHeight="49.0" prefWidth="238.0" spacing="5.0">
                <children>
-                  <JFXTextField fx:id="title" focusColor="#2f4eab" prefHeight="34.0" prefWidth="171.0" promptText="Title..." unFocusColor="#862b2b">
+                  <JFXButton buttonType="RAISED" defaultButton="true" onAction="#saveNote" prefHeight="32.0" prefWidth="98.0" ripplerFill="#163912" text="Save">
                      <font>
-                        <Font name="Open Sans Bold" size="16.0" />
+                        <Font name="Open Sans Bold" size="12.0" />
                      </font>
-                  </JFXTextField>
-                  <JFXButton onAction="#newNote" prefHeight="35.0" prefWidth="43.0" ripplerFill="#0080ff" text="+" textFill="WHITE">
-                     <font>
-                        <Font name="Open Sans Bold" size="18.0" />
-                     </font>
+                     <styleClass>
+                        <String fx:value="btn" />
+                        <String fx:value="orange-gradient" />
+                     </styleClass>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" onAction="#clearNote" prefHeight="54.0" prefWidth="70.0" ripplerFill="#0a3246" text="Clear">
+                     <font>
+                        <Font name="Open Sans Bold" size="12.0" />
+                     </font>
                      <styleClass>
                         <String fx:value="btn" />
                         <String fx:value="primary" />
                      </styleClass>
-                     <effect>
-                        <Shadow blurType="GAUSSIAN" color="#2b2b2b" height="32.86" radius="15.19" width="29.9" />
-                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </JFXButton>
-               </children>
-            </HBox>
-            <JFXTextArea fx:id="content" prefHeight="203.0" prefWidth="220.0" />
-            <HBox prefHeight="0.0" prefWidth="220.0" spacing="5.0">
-               <children>
-                  <JFXButton onAction="#saveNote" prefHeight="25.0" prefWidth="90.0" ripplerFill="#163912" text="Save">
+                  <JFXButton buttonType="RAISED" onAction="#closeNote" prefHeight="51.0" prefWidth="55.0" text="Close">
                      <font>
                         <Font name="Open Sans Bold" size="12.0" />
                      </font>
                      <styleClass>
                         <String fx:value="btn" />
-                        <String fx:value="success" />
+                        <String fx:value="orange-gradient-outline" />
                      </styleClass>
-                     <effect>
-                        <Shadow blurType="GAUSSIAN" color="#2b2b2b" height="32.86" radius="15.19" width="29.9" />
-                     </effect>
-                  </JFXButton>
-                  <JFXButton onAction="#clearNote" prefHeight="25.0" prefWidth="70.0" ripplerFill="#1584bd" styleClass="btn" text="Clear">
-                     <font>
-                        <Font name="Open Sans Bold" size="12.0" />
-                     </font>
-                     <effect>
-                        <Shadow blurType="GAUSSIAN" color="#2b2b2b" height="32.86" radius="15.19" width="29.9" />
-                     </effect>
-                  </JFXButton>
-                  <JFXButton onAction="#closeNote" prefHeight="29.0" prefWidth="52.0" ripplerFill="#eb0000" text="Close">
-                     <font>
-                        <Font name="Open Sans Bold" size="12.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="btn" />
-                        <String fx:value="danger" />
-                     </styleClass>
-                     <effect>
-                        <Shadow blurType="GAUSSIAN" color="#2b2b2b" height="32.86" radius="15.19" width="29.9" />
-                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <ripplerFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#ff670f" />
+                              <Stop color="#ff0f97" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </ripplerFill>
                   </JFXButton>
                </children>
             </HBox>
@@ -83,4 +118,7 @@
          </padding>
       </VBox>
    </children>
+   <effect>
+      <DropShadow blurType="GAUSSIAN" color="#545454" height="41.76" radius="20.38" width="41.76" />
+   </effect>
 </AnchorPane>

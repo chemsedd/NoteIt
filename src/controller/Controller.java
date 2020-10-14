@@ -20,11 +20,18 @@ public class Controller implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
     }
 
+    /**
+     * Create new note window.
+     * @throws IOException
+     */
     @FXML
     void newNote() throws IOException {
         NoteStage noteStage = new NoteStage();
     }
 
+    /**
+     *
+     */
     @FXML
     void saveNote() {
         System.out.println("Title:" + title.getText());
@@ -43,6 +50,7 @@ public class Controller implements Initializable {
 
     /**
      * Exit app.
+     * Close all notes
      */
     @FXML
     void closeNote() {

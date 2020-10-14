@@ -15,6 +15,8 @@ public class NoteStage extends Stage {
         root.getStylesheets().add(getClass().getResource("../resources/style.css").toExternalForm());
         this.setTitle("NoteIt");
         this.initStyle(StageStyle.DECORATED);
+        this.setAlwaysOnTop(true);
+        this.setResizable(false);
         Scene scene = new Scene(root);
         this.setScene(scene);
         this.show();
