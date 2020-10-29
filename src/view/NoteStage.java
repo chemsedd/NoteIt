@@ -7,8 +7,9 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.io.Serializable;
 
-public class NoteStage extends Stage {
+public class NoteStage extends Stage implements Serializable {
 
     public NoteStage() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("../view/mainView.fxml"));
